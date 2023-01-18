@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+<input type="text" id="input1" size="10">
+<br><br>
+<input type="text" id="input2" size="10">
+<br><br>
+<input type="button" value="+" onclick="calculate('+')">
+<input type="button" value="-" onclick="calculate('-')">
+<input type="button" value="*" onclick="calculate('*')">
+<input type="button" value="/" onclick="calculate('/')">
+<br><br>
+<input type="text" id="result" size="10" readonly>
+</form> 
+
+<script>
+function calculate(operator) {
+  var input1 = document.getElementById("input1").value;
+  var input2 = document.getElementById("input2").value;
+  var result;
+  
+  switch (operator) {
+    case '+':
+      result = parseFloat(input1) + parseFloat(input2);
+      break;
+    case '-':
+      result = parseFloat(input1) - parseFloat(input2);
+      break;
+    case '*':
+      result = parseFloat(input1) * parseFloat(input2);
+      break;
+    case '/':
+      result = parseFloat(input1) / parseFloat(input2);
+      break;
+    default:
+      result = "Invalid operator";
+  }
+  
+  document.getElementById("result").value = result;
+}
+</script>
+
+</body>
+</html>
